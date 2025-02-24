@@ -1,0 +1,11 @@
+<Root>
+    <title>Hello World</title>
+    <person>
+        <name>LiSi</name>
+        <age>24</age>
+    </person>
+</Root>
+
+<PLAY>
+    <name>ARK</name>
+</PLAY>

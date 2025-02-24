@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+    <Title>你好</Title>
+    <ID>1024</ID>
+    <Person>
+        <Name>zhangSan</Name>
+        <Age>18</Age>
+    </Person>
+    <PosList>
+        <xpos>12.3</xpos>
+        <ypos>6.6</ypos>
+
+        <xpos>3.2</xpos>
+        <ypos>5.4</ypos>
+
+        <xpos>6.8</xpos>
+        <ypos>7.6</ypos>
+    </PosList>
+</Root>
