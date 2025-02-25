@@ -20,6 +20,12 @@ void ATestXML::BeginPlay()
 {
 	Super::BeginPlay();
 
+	if (!bEnableTest)
+	{
+		LogWarning("not enable to run test")
+		return;
+	}
+	
 	tinyxml2::XMLDocument doc;
 	tinyxml2::XMLError error = doc.LoadFile(TCHAR_TO_UTF8(TEXT("D:\\Projects\\B1\\Plugins\\XMLHelper\\test_example\\example_01.xml")));
 	if (error != tinyxml2::XMLError::XML_SUCCESS)
@@ -116,4 +122,31 @@ void ATestXML::BeginPlay()
 		return;
 	}
 	LogWarning("write xml file success")
+
+	// try copy
+	tinyxml2::XMLDocument targetDoc;
+	doc.DeepCopy(&targetDoc);
+	LogError("after deep copy")
+	LogWarning("source doc's title:%s",UTF8_TO_TCHAR(doc.FirstChildElement()->FirstChildElement()->GetText()))
+	LogWarning("target doc's title:%s",UTF8_TO_TCHAR(targetDoc.FirstChildElement()->FirstChildElement()->GetText()))
+
+	tinyxml2::XMLElement* targetPerson = targetDoc.FirstChildElement()->FirstChildElement("Person");
+	LogWarning("get target doc's child node person result: %s ",targetPerson?TEXT("TRUE"):TEXT("FALSE"))
+	if (targetPerson)
+	{
+		LogWarning("target person's name:%s",UTF8_TO_TCHAR(targetPerson->FirstChildElement("Name")->GetText()))
+	}
+	
+	LogWarning("insert data to source")
+	doc.FirstChildElement()->InsertNewChildElement("Insert")->SetText("this is insert data");
+	
+	// find failed
+	tinyxml2::XMLElement* findElement = targetDoc.FirstChildElement()->FirstChildElement("Insert");
+	LogWarning("try find data from target doc :%s",findElement?TEXT("TRUE"):TEXT("FALSE"))
+
+	// DeepClone可以递归复制当前节点下的全部节点 DeepClone中的参数为目标文档的Document对象
+	// doc.DeepClone();
+
+	// ShallowClone仅复制当前节点
+	// doc.ShallowClone();
 }
