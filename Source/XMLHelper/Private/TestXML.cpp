@@ -27,7 +27,7 @@ void ATestXML::BeginPlay()
 	}
 	
 	tinyxml2::XMLDocument doc;
-	tinyxml2::XMLError error = doc.LoadFile(TCHAR_TO_UTF8(TEXT("D:\\Projects\\B1\\Plugins\\XMLHelper\\test_example\\example_01.xml")));
+	tinyxml2::XMLError error = doc.LoadFile(TCHAR_TO_UTF8(TEXT("D:\\Projects\\XML\\Plugins\\XMLHelper\\test_example\\example_01.xml")));
 	if (error != tinyxml2::XMLError::XML_SUCCESS)
 	{
 		LogError("Failed to load XML file: %s",UTF8_TO_TCHAR(doc.ErrorStr()))

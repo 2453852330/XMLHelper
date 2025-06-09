@@ -8,6 +8,8 @@
 
 /*
  * this file is the test class of HOW TO USE TinyXML2 Lib
+ * 这是个测试类,正式使用时可以删除掉这个类
+ * TextXML.h + TestXML.cpp
  */
 
 UCLASS()

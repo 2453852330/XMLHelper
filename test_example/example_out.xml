@@ -1,11 +1,11 @@
-<Root>
-    <title>Hello World</title>
-    <person>
-        <name>LiSi</name>
-        <age>24</age>
-    </person>
-</Root>
-
-<PLAY>
-    <name>ARK</name>
-</PLAY>
+<AAA>
+    <name>ZhangSan</name>
+    <age>18</age>
+    <name>
+        <info country="China">this is new Name element</info>
+    </name>
+    <pos>
+        <x>12.3</x>
+        <y>15.5</y>
+    </pos>
+</AAA>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Root>
+<Root strAttr="Hello World" intAttr="12345" boolAttr="true" floatAttr="3.14159">
     <Title>你好</Title>
+    <Title>世界</Title>
     <ID>1024</ID>
     <Person>
         <Name>zhangSan</Name>
